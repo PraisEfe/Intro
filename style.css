@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: Poppins, serif;
-    background: url(/images/bg-intro-desktop.png) hsl(0, 100%, 74%);
+    background: url(images/bg-intro-desktop.png) hsl(0, 100%, 74%);
 }
 
 
@@ -135,11 +135,19 @@ JAVASCRIPT STYLING */
 }
 
 .second-container form .icon{
-    background: url(/images/icon-error.svg) no-repeat 95%/ 20px;    
+    background: url(images/icon-error.svg) no-repeat 95%/ 20px;    
+}
+
+#successful{
+    display: none;
+    color: green;
+    text-align: center;
+    font-size: 14px;
 }
 
 /*RESPONSIVE LAYOUT*/
 @media screen and (max-width: 768px) {
+
     .container{
         font-size: 14px;
         display: flex;

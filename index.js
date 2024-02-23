@@ -6,6 +6,7 @@ const emailAddress = document.getElementById("emailAddress");
 const password = document.getElementById("password");
 const input = document.getElementsByClassName('input');
 const icon = document.getElementsByClassName('icon');
+const done = document.getElementById('successful');
 let error1 = document.querySelector('#error1');
 let error2 = document.querySelector('#error2');
 let error3 = document.querySelector('#error3');
@@ -52,7 +53,9 @@ submit.addEventListener('click', function(event){
         firstName.classList.add('icon');
         error1.textContent = 'First Name cannot be empty';
         error1.style.display = 'block';
-        error1.classList.add('error'); //prompt if the FirstName field is empty    
+        error1.classList.add('error');
+        done.style.display = 'none';
+         //prompt if the FirstName field is empty    
     }
     // else{
     //     console.log("meh")
@@ -67,7 +70,8 @@ submit.addEventListener('click', function(event){
         lastName.classList.add('icon');
         error2.textContent = 'Last Name cannot be empty';
         error2.style.display = 'block';
-        error2.classList.add('error');//prompt if lastName field is empty
+        error2.classList.add('error');
+        done.style.display = 'none';//prompt if lastName field is empty
     }
     // else{
     //     error2.style.display = 'none';
@@ -84,7 +88,8 @@ submit.addEventListener('click', function(event){
         emailAddress.classList.add('icon');
         error3.textContent = 'Looks like this is not an email';
         error3.style.display = 'block';
-        error3.classList.add('error'); // else this error statement is prompted
+        error3.classList.add('error');
+        done.style.display = 'none'; // else this error statement is prompted
       }
 
       if(password.value.trim() === ''){
@@ -93,12 +98,18 @@ submit.addEventListener('click', function(event){
         password.classList.add('icon');
         error4.textContent = 'Password cannot be empty';
         error4.style.display = 'block';
-        error4.classList.add('error');//prompts if the password field is empty
+        error4.classList.add('error');
+        done.style.display = 'none';//prompts if the password field is empty
     }
     // else{
     //     error4.style.display = 'none';
     //     error4.textContent = ' ';//default
     // }
+
+    if(firstName.value != '' && lastName.value != '' && emailAddress.value != '' && password.value != ''){
+      done.style.display = 'block';
+      done.textContent = 'Successful!';
+    }
     
         //CLEARS INPUT FIELD
         firstName.value = '';
@@ -115,7 +126,7 @@ firstName.addEventListener('click', function(){
     error1.style.display = 'none';
     firstName.style.borderColor = 'gray'; //This clears the effect of the validation function
     firstName.classList.remove('icon');
-
+    done.style.display = 'none'; //removes successful prompt
   }
 )
 
@@ -123,18 +134,21 @@ lastName.addEventListener('click', function(){
     error2.style.display = 'none';
     lastName.style.borderColor = 'gray'; //This clears the effect of the validation function
     lastName.classList.remove('icon');
+    done.style.display = 'none'; //removes successful prompt
   }
 )
 emailAddress.addEventListener('click', function(){
     error3.style.display = 'none';
     emailAddress.style.borderColor = 'gray'; //This clears the effect of the validation function
     emailAddress.classList.remove('icon');
+    done.style.display = 'none'; //removes successful prompt
   }
 )
 password.addEventListener('click', function(){
     error4.style.display = 'none';
     password.style.borderColor = 'gray'; //This clears the effect of the validation function
     password.classList.remove('icon');
+    done.style.display = 'none'; //removes successful prompt
   }
 )
 
