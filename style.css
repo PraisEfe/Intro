@@ -168,6 +168,10 @@ JAVASCRIPT STYLING */
         margin: 0;
     }
 
+    .container .first-container{
+        margin-right:0                    ;
+    }
+
     .first-container .learn p{
         font-size: 2rem;
         text-align: center;
