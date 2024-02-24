@@ -83,7 +83,16 @@ submit.addEventListener('click', function(event){
     //  if(emailAddress.value.match(pattern)){
     //         console.log("valid email"); //This if statement evaulates to true if the input matches the regular expression
     //   }
-      if(emailAddress.value.trim() === '' || !emailAddress.value.match(pattern)){
+      if(emailAddress.value.trim() === ''){
+        emailAddress.style.borderColor = 'red';
+        emailAddress.classList.add('icon');
+        error3.textContent = 'Email Address cannot be empty';
+        error3.style.display = 'block';
+        error3.classList.add('error');
+        emailAddress.value = ''; //clears email address filed
+        done.style.display = 'none';  // else this error statement is prompted
+          
+      }else if(!emailAddress.value.match(pattern)){
         emailAddress.style.borderColor = 'red';
         emailAddress.classList.add('icon');
         error3.textContent = 'Looks like this is not an email';
@@ -92,6 +101,8 @@ submit.addEventListener('click', function(event){
         emailAddress.value = ''; //clears email address filed
         done.style.display = 'none';  // else this error statement is prompted
       }
+
+    
 
       if(password.value.trim() === ''){
         console.log('pass');
