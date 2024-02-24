@@ -89,7 +89,8 @@ submit.addEventListener('click', function(event){
         error3.textContent = 'Looks like this is not an email';
         error3.style.display = 'block';
         error3.classList.add('error');
-        done.style.display = 'none'; // else this error statement is prompted
+        emailAddress.value = ''; //clears email address filed
+        done.style.display = 'none';  // else this error statement is prompted
       }
 
       if(password.value.trim() === ''){
@@ -100,22 +101,28 @@ submit.addEventListener('click', function(event){
         error4.style.display = 'block';
         error4.classList.add('error');
         done.style.display = 'none';//prompts if the password field is empty
-    }
+        
+      }else if(password.value.length < 8){
+        password.style.borderColor = 'red';
+        password.classList.add('icon');
+        error4.textContent = 'Password must not be less than 8 characters';
+        error4.style.display = 'block';
+        error4.classList.add('error');
+        done.style.display = 'none'; //prompts if the password is less than 8 characters
+      }
     // else{
     //     error4.style.display = 'none';
     //     error4.textContent = ' ';//default
     // }
 
-    if(firstName.value != '' && lastName.value != '' && emailAddress.value != '' && password.value != ''){
+    if(firstName.value != '' && lastName.value != '' && emailAddress.value.match(pattern) && (password.value != '' && password.value.length >= 8)){
       done.style.display = 'block';
       done.textContent = 'Successful!';
+      firstName.value = '';
+      lastName.value = '';
+      emailAddress.value = '';
+      password.value = '';//CLEARS ALL INPUT FIELDS WHEN ALL FIELDS HAVE BEEN CORRECTLY FILLED AND DISPLAYS THE SUCCESS PROMPT
     }
-    
-        //CLEARS INPUT FIELD
-        firstName.value = '';
-        lastName.value = '';
-        emailAddress.value = '';
-        password.value = '';
 
 })
 

@@ -148,19 +148,33 @@ JAVASCRIPT STYLING */
 /*RESPONSIVE LAYOUT*/
 @media screen and (max-width: 768px) {
 
-    .container{
-        font-size: 14px;
+    body{
         display: flex;
         flex-direction: column;
-        width: 40%;
+        justify-content: center;
+        align-items: center;
+        background: url(images/bg-intro-mobile.png) hsl(0, 100%, 74%);
+        height: auto;
+        width: 100vw;
+    }
+
+    .container{
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
     }
 
     .first-container .learn p{
-        font-size: 45px;
+        font-size: 2rem;
+        text-align: center;
     }
 
     .first-container .see p{
-        width:80%;
+        width:100%;
         overflow: hidden;
         text-align: center;
     }
