@@ -119,6 +119,7 @@ submit.addEventListener('click', function(event){
         error4.textContent = 'Password must not be less than 8 characters';
         error4.style.display = 'block';
         error4.classList.add('error');
+        password.value = ''; //clears password field
         done.style.display = 'none'; //prompts if the password is less than 8 characters
       }
     // else{
